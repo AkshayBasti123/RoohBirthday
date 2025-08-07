@@ -1,1 +1,88 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Courier New', monospace;
+  height: 100vh;
+  overflow: hidden;
+  background: black;
+  color: white;
+}
 
+.background-slideshow {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-size: cover;
+  background-position: center;
+  animation: slideshow 30s infinite;
+  z-index: -1;
+}
+
+/* Add your own background images */
+@keyframes slideshow {
+  0% { background-image: url('photo1.jpg'); }
+  33% { background-image: url('photo2.jpg'); }
+  66% { background-image: url('photo3.jpg'); }
+  100% { background-image: url('photo1.jpg'); }
+}
+
+.floating-messages {
+  position: absolute;
+  top: 10%;
+  width: 100%;
+  text-align: center;
+  font-size: 1.5em;
+  animation: floatText 20s linear infinite;
+}
+
+.floating-messages span {
+  display: block;
+  margin: 10px 0;
+  animation: float 8s infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); opacity: 1; }
+  50% { transform: translateY(-30px); opacity: 0.5; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+.envelope-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  z-index: 2;
+}
+
+.envelope-container img {
+  width: 200px;
+  transition: transform 0.3s ease;
+}
+
+.envelope-container img:hover {
+  transform: scale(1.1);
+}
+
+.letter {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  max-width: 600px;
+  background: rgba(255, 255, 255, 0.95);
+  color: black;
+  padding: 30px;
+  border-radius: 15px;
+  z-index: 3;
+  box-shadow: 0 0 30px pink;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translate(-50%, -60%); }
+  to { opacity: 1; transform: translate(-50%, -50%); }
+}
