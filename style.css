@@ -1,82 +1,69 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Comic Sans MS', cursive, sans-serif;
-  background: #ffe6f0;
+  font-family: 'Arial', sans-serif;
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  color: white;
   overflow-x: hidden;
+  text-align: center;
 }
 
 h1 {
-  text-align: center;
   margin-top: 30px;
-  font-size: 2.5em;
-  color: #d63384;
-  text-shadow: 2px 2px #fff0f5;
+  font-size: 2rem;
+  color: pink;
 }
 
-#envelope {
-  width: 150px;
-  height: 100px;
-  background: url('your-envelope-image.png') no-repeat center center;
-  background-size: contain;
-  cursor: pointer;
-  margin: 40px auto;
+.envelope {
+  margin: 50px auto;
+  width: 200px;
+  height: 120px;
+  background: #ffcccc;
+  border: 2px solid pink;
+  border-radius: 10px;
   position: relative;
-  z-index: 2;
+  cursor: pointer;
+  z-index: 1;
 }
 
-#letterContainer {
+.letter {
   display: none;
-  width: 90%;
-  max-width: 600px;
-  margin: 20px auto;
-  background: white;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-  position: relative;
-  z-index: 5;
-  font-size: 1.2em;
-  line-height: 1.6em;
-  white-space: pre-wrap;
-}
-
-#floatingHeartsContainer {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  overflow: hidden;
-  z-index: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 500px;
+  max-height: 80vh;
+  overflow-y: auto;
+  padding: 20px;
+  background: white;
+  color: black;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 192, 203, 0.8);
+  z-index: 10;
 }
 
-.floating-heart {
+.emoji-heart {
   position: absolute;
-  font-size: 24px;
-  animation: floatUp 6s linear infinite;
-}
-
-@keyframes floatUp {
-  0% {
-    transform: translateY(100vh) scale(1);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-10vh) scale(0.8);
-    opacity: 0;
-  }
-}
-
-.reveal-heart {
-  position: absolute;
-  font-size: 30px;
+  font-size: 1.8rem;
   cursor: pointer;
-  z-index: 3;
-  transition: transform 0.3s;
+  transition: transform 0.3s ease;
 }
 
-.reveal-heart:hover {
-  transform: scale(1.3);
+.emoji-heart:hover::after {
+  content: attr(data-message);
+  position: absolute;
+  background: rgba(255, 255, 255, 0.9);
+  color: black;
+  padding: 5px 10px;
+  border-radius: 5px;
+  top: -40px;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+#letterText {
+  white-space: pre-wrap;
+  text-align: left;
 }
