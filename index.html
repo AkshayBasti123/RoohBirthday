@@ -1,23 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Happy Birthday Roohpuneet 🎉</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For You 💖</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1 class="title">Happy Birthday to You Roohpuneet 🌸</h1>
 
-  <div class="envelope" onclick="openLetter()">
-    <img src="envelope.png" alt="Envelope" class="envelope-img">
+  <!-- Background photos -->
+  <div class="background-slideshow"></div>
+
+  <!-- Floating messages -->
+  <div class="floating-messages">
+    <span>You're my world </span>
+    <span>I love you so much 💕</span>
+    <span>Forever and always 🫶</span>
   </div>
 
-  <div id="letter" class="letter">
-    <p id="letter-text"></p>
+  <!-- Envelope in center -->
+  <div class="envelope-container">
+    <img src="envelope.png" alt="Envelope" id="envelope" />
   </div>
 
-  <div id="emoji-container"></div>
-  <canvas id="confetti-canvas"></canvas>
+  <!-- Hidden letter -->
+  <div class="letter" id="letter">
+    <div class="letter-content">
+      <h2>Dear [Her Name],</h2>
+      <p>
+        You make every day feel like magic. I made this just for you, because you deserve the world. Happy birthday, my love 💖
+      </p>
+      <p style="text-align: right;">— Akshay</p>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
