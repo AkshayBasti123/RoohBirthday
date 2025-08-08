@@ -1,25 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>For You ❤️</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday Roohpuneet</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="floating-hearts"></div>
 
-  <div class="envelope" id="envelope">
-    <img src="envelope.png" alt="Envelope">
+  <h1 class="title">Happy Birthday to You, Roohpuneet 💖</h1>
+
+  <!-- Floating hearts (clickable emojis) -->
+  <div id="floating-emojis"></div>
+
+  <!-- Envelope and letter -->
+  <div class="envelope-container">
+    <img src="images/envelope.png" alt="Envelope" class="envelope" id="envelope" />
+    <div class="letter" id="letter">
+      <p id="typed-text"></p>
+    </div>
   </div>
 
-  <div class="letter-container" id="letterContainer">
-    <p class="typing-text" id="letterText"></p>
-  </div>
-
-  <div class="click-hearts-container" id="clickHeartsContainer">
-    <!-- Hearts will be injected here -->
-  </div>
-
+  <!-- Confetti Canvas -->
   <canvas id="confetti-canvas"></canvas>
 
   <script src="script.js"></script>
