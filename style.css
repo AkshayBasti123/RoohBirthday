@@ -1,99 +1,73 @@
 body {
   margin: 0;
-  padding: 0;
-  background: linear-gradient(to bottom, #1e1e2f, #3e3e60);
+  font-family: 'Segoe UI', sans-serif;
+  background: #fff0f5;
   overflow: hidden;
-  font-family: 'Comic Sans MS', cursive;
-  color: white;
+}
+
+.title {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 2rem;
+  color: #d63384;
+  font-weight: bold;
+}
+
+.envelope-container {
   position: relative;
+  text-align: center;
+  margin-top: 60px;
 }
 
-/* Envelope */
 .envelope {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  cursor: pointer;
-  z-index: 10;
-}
-
-.envelope img {
   width: 200px;
+  cursor: pointer;
+  transition: transform 0.3s;
 }
 
-/* Letter */
-.letter-container {
-  display: none;
-  position: absolute;
-  top: 55%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 80%;
-  max-width: 600px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 20px;
+.envelope:hover {
+  transform: scale(1.05);
+}
+
+.letter {
+  width: 60%;
+  max-width: 500px;
+  margin: 30px auto;
   padding: 20px;
-  font-size: 1.2rem;
-  color: pink;
-  z-index: 15;
-  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  display: none;
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.6;
 }
 
-.typing-text {
-  white-space: pre-wrap;
-  overflow-wrap: break-word;
+#confetti-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
 }
 
-/* Floating hearts */
-.floating-hearts {
+.floating-heart {
   position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: 5;
-}
-
-.heart {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  background: url('https://i.imgur.com/0YI4kN6.png') no-repeat center;
-  background-size: contain;
+  font-size: 24px;
+  cursor: pointer;
+  user-select: none;
   animation: floatUp 6s linear infinite;
 }
 
 @keyframes floatUp {
-  0% {
-    transform: translateY(100vh) scale(1);
-    opacity: 0;
-  }
-  50% {
+  from {
+    transform: translateY(100vh);
     opacity: 1;
   }
-  100% {
-    transform: translateY(-10vh) scale(0.5);
+  to {
+    transform: translateY(-10vh);
     opacity: 0;
   }
-}
-
-/* Clickable hearts */
-.click-hearts-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 20;
-}
-
-.click-heart {
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  background: url('https://i.imgur.com/0YI4kN6.png') no-repeat center;
-  background-size: contain;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.click-heart:hover {
-  transform: scale(1.2);
 }
